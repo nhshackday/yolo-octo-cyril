@@ -1,6 +1,7 @@
 from __future__ import print_function, division, absolute_import, unicode_literals
 
 from bs4 import BeautifulSoup
+import json
 
 
 soup = BeautifulSoup(open('homeopaths.html'))
@@ -23,4 +24,5 @@ for tr in trs:
         homeopath = {}
     homeopath[label] = content
 
-print(homeopaths[0])
+print(json.dumps(homeopaths))
+
